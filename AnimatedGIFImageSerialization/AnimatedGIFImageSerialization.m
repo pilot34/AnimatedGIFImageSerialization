@@ -194,20 +194,20 @@ static inline void animated_gif_swizzleSelector(Class class, SEL originalSelecto
 
 @implementation UIImage (_AnimatedGIFImageSerialization)
 
-+ (void)load {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        @autoreleasepool {
-            animated_gif_swizzleSelector(object_getClass((id)self), @selector(imageNamed:), @selector(animated_gif_imageNamed:));
-            animated_gif_swizzleSelector(object_getClass((id)self), @selector(imageWithData:), @selector(animated_gif_imageWithData:));
-            animated_gif_swizzleSelector(object_getClass((id)self), @selector(imageWithData:scale:), @selector(animated_gif_imageWithData:scale:));
-            animated_gif_swizzleSelector(object_getClass((id)self), @selector(imageWithContentsOfFile:), @selector(animated_gif_imageWithContentsOfFile:));
-            animated_gif_swizzleSelector(self, @selector(initWithContentsOfFile:), @selector(animated_gif_initWithContentsOfFile:));
-            animated_gif_swizzleSelector(self, @selector(initWithData:), @selector(animated_gif_initWithData:));
-            animated_gif_swizzleSelector(self, @selector(initWithData:scale:), @selector(animated_gif_initWithData:scale:));
-        }
-    });
-}
+//+ (void)load {
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        @autoreleasepool {
+//            animated_gif_swizzleSelector(object_getClass((id)self), @selector(imageNamed:), @selector(animated_gif_imageNamed:));
+//            animated_gif_swizzleSelector(object_getClass((id)self), @selector(imageWithData:), @selector(animated_gif_imageWithData:));
+//            animated_gif_swizzleSelector(object_getClass((id)self), @selector(imageWithData:scale:), @selector(animated_gif_imageWithData:scale:));
+//            animated_gif_swizzleSelector(object_getClass((id)self), @selector(imageWithContentsOfFile:), @selector(animated_gif_imageWithContentsOfFile:));
+//            animated_gif_swizzleSelector(self, @selector(initWithContentsOfFile:), @selector(animated_gif_initWithContentsOfFile:));
+//            animated_gif_swizzleSelector(self, @selector(initWithData:), @selector(animated_gif_initWithData:));
+//            animated_gif_swizzleSelector(self, @selector(initWithData:scale:), @selector(animated_gif_initWithData:scale:));
+//        }
+//    });
+//}
 
 #pragma mark -
 
